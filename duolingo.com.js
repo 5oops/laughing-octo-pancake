@@ -16,6 +16,7 @@ if (isCheckUrl(url)) {
   rBody = rBody.replace(/has_item_gold_subscription\\":\s*\w+/g, 'has_item_gold_subscription\\":true')
                 .replace(/premium_free_trial_period\\":\s*\w+/g, 'premium_free_trial_period\\":false')
                 .replace(/has_item_premium_subscription\\":\s*\w+/g, 'has_item_premium_subscription\\":true')
+                .replace(/gems\\":\s*(\d+)/g, 'gems\\":9999')
                 .replace(/premium_expected_expiration\\":\s*(\d+)/g, 'premium_expected_expiration\\":1708739200000')
                 .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":1708739200000')
                 .replace(/isFreeTrialPeriod\\":\s*\w+/g, 'isFreeTrialPeriod\\":false')
@@ -23,7 +24,7 @@ if (isCheckUrl(url)) {
 
   $done( { 'body': rBody } );
 }
-if (url.indexOf('ios-api-2.duolingo.com/2017-06-30/users/') > 0 && url.indexOf('available-features') > 0 ) {
+if (url.indexOf('ios-api-2.duolingo.com/2017-06-30/users/') !== -1 && url.indexOf('available-features') !== -1 ) {
     const unlock = {
         "subscriptionFeatures": ["NO_NETWORK_ADS", "UNLIMITED_HEARTS", "LEGENDARY_LEVEL", "MISTAKES_INBOX", "MASTERY_QUIZ", "NO_SUPER_PROMOS"],
         "purchasableFeatures": ["CAN_PURCHASE_IAP", "CAN_PURCHASE_SUBSCRIPTION"]
