@@ -15,5 +15,5 @@ if (isCheckUrl(url) && $response.status == 200) {
   var rBody = $response.body;
   rBody = rBody.replace(/isFreeTrialPeriod\\":\s*\w+/, 'isFreeTrialPeriod\\":false').replace(/plusStatus\\":\s*\\"\w+/, 'plusStatus\\":\\"PLUS');
 
-  $done({ rBody })
+  $done( rBody );
 }
