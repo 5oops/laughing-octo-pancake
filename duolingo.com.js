@@ -11,7 +11,7 @@ hostname = ios-api-2.duolingo.com
 const url = $request.url
 const isCheckUrl = (url) => url.includes('ios-api-2.duolingo.com/2017-06-30/batch')
 
-if (isCheckUrl(url) && $response.status == 200) {
+if (isCheckUrl(url)) {
   var rBody = $response.body;
   rBody = rBody.replace(/isFreeTrialPeriod\\":\s*\w+/, 'isFreeTrialPeriod\\":false').replace(/plusStatus\\":\s*\\"\w+/, 'plusStatus\\":\\"PLUS');
 
