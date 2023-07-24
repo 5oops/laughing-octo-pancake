@@ -2,7 +2,7 @@
 
 [rewrite_local]
 ^https?:\/\/ios-api-2\.duolingo\.com\/2017-06-30\/batch url script-response-body https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master/duolingo.com.js
-
+^https?:\/\/ios-api-2\.duolingo\.com\/2017-06-30\/users\/(\d+)\/available-features url script-response-body https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master/duolingo.com.js
 [mitm]
 hostname = ios-api-2.duolingo.com
 
@@ -22,4 +22,11 @@ if (isCheckUrl(url)) {
                 .replace(/plusStatus\\":\s*\\"\w+/g, 'plusStatus\\":\\"PLUS');
 
   $done( { 'body': rBody } );
+}
+if (url.indexOf('ios-api-2.duolingo.com/2017-06-30/users/') > 0 && url.indexOf('available-features') > 0 ) {
+    const unlock = {
+        "subscriptionFeatures": ["NO_NETWORK_ADS", "UNLIMITED_HEARTS", "LEGENDARY_LEVEL", "MISTAKES_INBOX", "MASTERY_QUIZ", "NO_SUPER_PROMOS"],
+        "purchasableFeatures": ["CAN_PURCHASE_IAP", "CAN_PURCHASE_SUBSCRIPTION"]
+    };
+    $done( { 'body': JSON.stringify(unlock) } );
 }
