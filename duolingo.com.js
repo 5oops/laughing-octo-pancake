@@ -13,7 +13,9 @@ const isCheckUrl = (url) => url.includes('ios-api-2.duolingo.com/2017-06-30/batc
 
 if (isCheckUrl(url)) {
   var rBody = $response.body;
-  rBody = rBody.replace(/isFreeTrialPeriod\\":\s*\w+/, 'isFreeTrialPeriod\\":false').replace(/plusStatus\\":\s*\\"\w+/, 'plusStatus\\":\\"PLUS');
+  rBody = rBody.replace(/has_item_gold_subscription\\":\s*\w+/g, 'has_item_gold_subscription\\":true')
+                .replace(/isFreeTrialPeriod\\":\s*\w+/g, 'isFreeTrialPeriod\\":false')
+                .replace(/plusStatus\\":\s*\\"\w+/g, 'plusStatus\\":\\"PLUS');
 
   $done( { 'body': rBody } );
 }
