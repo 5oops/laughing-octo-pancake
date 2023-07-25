@@ -7,8 +7,8 @@ from: https://github.com/Crazy-Z7/Script
 ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master/waterllama.js
 hostname = buy.itunes.apple.com
 **************************************/
-const header = $request.header;
-if(header.indexOf(Waterllama) !== -1 || header.indexOf(waterllama) !== -1) {
+const body = $response.body;
+if(body.indexOf('com.vitalii.water') !== -1)  {
   var obj = JSON.parse($response.body);
     
       obj = {
