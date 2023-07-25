@@ -17,8 +17,8 @@ if (isCheckUrl(url)) {
                 .replace(/premium_free_trial_period\\":\s*\w+/g, 'premium_free_trial_period\\":false')
                 .replace(/has_item_premium_subscription\\":\s*\w+/g, 'has_item_premium_subscription\\":true')
                 .replace(/gems\\":\s*(\d+)/g, 'gems\\":9999')
-                .replace(/premium_expected_expiration\\":\s*(\d+)/g, 'premium_expected_expiration\\":1708739200000')
-                .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":1708739200')
+                .replace(/premium_expected_expiration\\":\s*(\d+)/g, 'premium_expected_expiration\\":4103004800000')
+                .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":4103004800')
                 .replace(/isFreeTrialPeriod\\":\s*\w+/g, 'isFreeTrialPeriod\\":false')
                 .replace(/plusStatus\\":\s*\\"\w+/g, 'plusStatus\\":\\"PLUS');
 
