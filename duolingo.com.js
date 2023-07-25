@@ -16,6 +16,7 @@ if (isCheckUrl(url)) {
   rBody = rBody.replace(/has_item_gold_subscription\\":\s*\w+/g, 'has_item_gold_subscription\\":true')
                 .replace(/premium_free_trial_period\\":\s*\w+/g, 'premium_free_trial_period\\":false')
                 .replace(/has_item_premium_subscription\\":\s*\w+/g, 'has_item_premium_subscription\\":true')
+                .replace(/has_item_live_subscription\\":\s*\w+/g, 'has_item_live_subscription\\":true')
                 .replace(/gems\\":\s*(\d+)/g, 'gems\\":9999')
                 .replace(/premium_expected_expiration\\":\s*(\d+)/g, 'premium_expected_expiration\\":4103004800000')
                 .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":4103004800')
