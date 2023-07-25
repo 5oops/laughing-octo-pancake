@@ -21,7 +21,8 @@ if (isCheckUrl(url)) {
                 .replace(/premium_expected_expiration\\":\s*(\d+)/g, 'premium_expected_expiration\\":4103004800000')
                 .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":4103004800')
                 .replace(/isFreeTrialPeriod\\":\s*\w+/g, 'isFreeTrialPeriod\\":false')
-                .replace(/plusStatus\\":\s*\\"\w+/g, 'plusStatus\\":\\"PLUS');
+                .replace(/plusStatus\\":\s*\\"\w+/g, 'plusStatus\\":\\"PLUS')
+                .replace(/\\"timerBoosts\\":\s*(\d+)/g, '\\"timerBoosts\\":29');
 
   $done( { 'body': rBody } );
 }
