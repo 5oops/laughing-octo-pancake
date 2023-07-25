@@ -1,6 +1,7 @@
 /*************************************
 @Zoo
 喝水羊驼，解锁永久订阅没效果就先试用在恢复
+from: https://github.com/Crazy-Z7/Script
 日期:2023.04.15
 [rewrite_local]
 ^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master//waterllama.js
