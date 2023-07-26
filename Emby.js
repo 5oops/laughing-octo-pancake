@@ -20,11 +20,11 @@ if (isCheckUrl(url) && $response.status != 200) {
     message: 'Device Valid'
   };
 
-  const sta = 200;
+  var modifiedStatus = 'HTTP/1.1 200 OK';
   //const headers = $response.headers
   //const body = JSON.stringify(unlock)
 
-  $done({ status: sta, headers: $response.headers, body: JSON.stringify(unlock) })
+  $done({ status: modifiedStatus, headers: $response.headers, body: JSON.stringify(unlock) })
 } else {
   $done({})
 }
