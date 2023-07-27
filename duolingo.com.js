@@ -18,13 +18,13 @@ if (isCheckUrl(url)) {
                 .replace(/has_item_premium_subscription\\":\s*\w+/g, 'has_item_premium_subscription\\":true')
                 .replace(/has_item_live_subscription\\":\s*\w+/g, 'has_item_live_subscription\\":true,\\"premium_receipt_source\\":\\"apple\\"')
                 .replace(/has_item_streak_wager\\":\s*\w+/g, 'has_item_streak_wager\\":true,\\"premium_product_id\\":\\"com.duolingo.DuolingoMobile.subscription.Premium.TwelveMonth.23Q1ExpNoMax14D.Trial14.84\\",\\"premium_expected_expiration\\":4103004800000')
-                .replace(/gems\\":\s*(\d+)/g, 'gems\\":9999')
+                //.replace(/gems\\":\s*(\d+)/g, 'gems\\":9999')
                 .replace(/\\"id\\":\\"timed_practice\\"\}/g, '\\"id\\":\\"timed_practice\\"},{\\"purchaseDate\\":1689033083,\\"purchasePrice\\":8399,\\"id\\":\\"premium_subscription\\",\\"subscriptionInfo\\":{\\"expectedExpiration\\":4103004800,\\"isFreeTrialPeriod\\":false,\\"isInBillingRetryPeriod\\":false,\\"productId\\":\\"com.duolingo.DuolingoMobile.subscription.Premium.TwelveMonth.23Q1ExpNoMax14D.Trial14.84\\",\\"renewer\\":\\"APPLE\\",\\"renewing\\":false,\\"tier\\":\\"twelve_month\\",\\"type\\":\\"premium\\"}}')
                 .replace(/premium_expected_expiration\\":\s*(\d+)/g, 'premium_expected_expiration\\":4103004800000')
                 .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":4103004800')
                 .replace(/isFreeTrialPeriod\\":\s*\w+/g, 'isFreeTrialPeriod\\":false')
                 .replace(/plusStatus\\":\s*\\"\w+/g, 'plusStatus\\":\\"PLUS')
-                .replace(/\\"timerBoosts\\":\s*(\d+)/g, '\\"timerBoosts\\":29')
+                //.replace(/\\"timerBoosts\\":\s*(\d+)/g, '\\"timerBoosts\\":29')
                 .replace(/\\"timezone\\":\s*\\"[^\\"]+/g, '\\"timezone\\":\\"Asia/Taipei')
                 .replace(/\\"utc_offset\\":\s*[^,]+/g, '\\"utc_offset\\":8.0');
 
