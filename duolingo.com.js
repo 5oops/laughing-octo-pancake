@@ -9,7 +9,7 @@ hostname = ios-api-2.duolingo.com, ios-api-2.duolingo.cn
 *************************************/
 
 const url = $request.url
-const isCheckUrl = (url) => (url.includes('ios-api-2.duolingo.com/2017-06-30/batch') || (url.includes('ios-api-2.duolingo.cn/2017-06-30/batch') || url.includes('ios-api-2.duolingo.com/2023-05-23/batch') || url.includes('ios-api-2.duolingo.cn/2023-05-23/batch'))
+const isCheckUrl = (url) => (url.includes('ios-api-2.duolingo.com/2017-06-30/batch') || url.includes('ios-api-2.duolingo.com/2023-05-23/batch') )
 
 if (isCheckUrl(url)) {
   var rBody = $response.body;
@@ -30,10 +30,10 @@ if (isCheckUrl(url)) {
 
   $done( { 'body': rBody } );
 }
-if ((url.indexOf('ios-api-2.duolingo.com/2017-06-30/users/') !== -1 || url.indexOf('ios-api-2.duolingo.cn/2017-06-30/users/') !== -1 || url.indexOf('ios-api-2.duolingo.com/2023-05-23/users/') !== -1 || url.indexOf('ios-api-2.duolingo.cn/2023-05-23/users/') !== -1) && url.indexOf('available-features') !== -1 ) {
+if ((url.indexOf('ios-api-2.duolingo.com/2017-06-30/users/') !== -1 || url.indexOf('ios-api-2.duolingo.com/2023-05-23/users/') !== -1 ) && url.indexOf('available-features') !== -1 ) {
     const unlock = {
-        "subscriptionFeatures": ["NO_NETWORK_ADS", "UNLIMITED_HEARTS", "LEGENDARY_LEVEL", "MISTAKES_INBOX", "MASTERY_QUIZ", "NO_SUPER_PROMOS"],
-        "purchasableFeatures": ["CAN_PURCHASE_IAP", "CAN_PURCHASE_SUBSCRIPTION"]
+        "purchasableFeatures": ["CAN_PURCHASE_IAP", "CAN_PURCHASE_SUBSCRIPTION"],
+        "subscriptionFeatures": ["NO_NETWORK_ADS", "UNLIMITED_HEARTS", "LEGENDARY_LEVEL", "MISTAKES_INBOX", "MASTERY_QUIZ", "NO_SUPER_PROMOS"]
     };
     $done( { 'body': JSON.stringify(unlock) } );
 }
