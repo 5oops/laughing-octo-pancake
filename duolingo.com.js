@@ -14,7 +14,7 @@ const isCheckUrl = (url) => (url.includes('ios-api-2.duolingo.com/2017-06-30/bat
 if (isCheckUrl(url)) {
   var rBody = $response.body;
   rBody = rBody.replace(/has_item_gold_subscription\\":\s*\w+/g, 'has_item_gold_subscription\\":false')
-                .replace(/premium_free_trial_period\\":\s*\w+/g, 'premium_free_trial_period\\":false')
+                .replace(/premium_free_trial_period\\":\s*\w+/g, 'premium_free_trial_period\\":true')
                 .replace(/has_item_premium_subscription\\":\s*\w+/g, 'has_item_premium_subscription\\":true')
                 .replace(/has_item_live_subscription\\":\s*\w+/g, 'has_item_live_subscription\\":true,\\"premium_receipt_source\\":\\"apple\\"')
                 .replace(/has_item_streak_wager\\":\s*\w+/g, 'has_item_streak_wager\\":true,\\"premium_product_id\\":\\"com.duolingo.DuolingoMobile.subscription.Premium.TwelveMonth.24Q2Max.120\\",\\"premium_expected_expiration\\":4103004800000')
