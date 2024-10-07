@@ -23,7 +23,7 @@ if (isCheckUrl(url)) {
                 .replace(/premium_expected_expiration\\":\s*(\d+)/g, 'premium_expected_expiration\\":1791387149000')
                 .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":17913871490')
                 .replace(/isFreeTrialPeriod\\":\s*\w+/g, 'isFreeTrialPeriod\\":true')
-                .replace(/emailAnnouncement\\":\s*\w+/g, 'emailAnnouncement\\":true,\\"plusStatus\\":\\"PLUS')
+                .replace(/emailAnnouncement\\":\s*\w+/g, 'emailAnnouncement\\":true,\\"plusStatus\\":\\"PLUS",\\"maxStatus\\":\\"MAX')
                 .replace(/\\"timerBoosts\\":\s*(\d+)/g, '\\"timerBoosts\\":99')
                 .replace(/\\"timezone\\":\s*\\"[^\\"]+/g, '\\"timezone\\":\\"Asia/Taipei')
                 .replace(/\\"utc_offset\\":\s*[^,]+/g, '\\"utc_offset\\":8.0');
