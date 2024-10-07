@@ -13,15 +13,15 @@ const isCheckUrl = (url) => (url.includes('ios-api-2.duolingo.com/2017-06-30/bat
 
 if (isCheckUrl(url)) {
   var rBody = $response.body;
-  rBody = rBody.replace(/has_item_gold_subscription\\":\s*\w+/g, 'has_item_gold_subscription\\":false')
-                .replace(/premium_free_trial_period\\":\s*\w+/g, 'premium_free_trial_period\\":true')
+  rBody = rBody.replace(/has_item_gold_subscription\\":\s*\w+/g, 'has_item_gold_subscription\\":true')
+                .replace(/premium_free_trial_period\\":\s*\w+/g, 'premium_free_trial_period\\":false')
                 .replace(/has_item_premium_subscription\\":\s*\w+/g, 'has_item_premium_subscription\\":true')
                 .replace(/has_item_live_subscription\\":\s*\w+/g, 'has_item_live_subscription\\":true,\\"premium_receipt_source\\":\\"apple\\"')
-                .replace(/has_item_streak_wager\\":\s*\w+/g, 'has_item_streak_wager\\":true,\\"premium_product_id\\":\\"com.duolingo.DuolingoMobile.subscription.Premium.TwelveMonth.24Q2Max.120\\",\\"premium_expected_expiration\\":4103004800000')
-                .replace(/gems\\":\s*(\d+)/g, 'gems\\":9999')
-                .replace(/\\"id\\":\\"timed_practice\\"\}/g, '\\"id\\":\\"timed_practice\\"},{\\"purchaseDate\\":1689033083,\\"purchasePrice\\":8399,\\"id\\":\\"premium_subscription\\",\\"subscriptionInfo\\":{\\"expectedExpiration\\":4103004800,\\"isFreeTrialPeriod\\":false,\\"isInBillingRetryPeriod\\":false,\\"productId\\":\\"com.duolingo.DuolingoMobile.subscription.Premium.TwelveMonth.24Q2Max.120\\",\\"renewer\\":\\"APPLE\\",\\"renewing\\":false,\\"tier\\":\\"twelve_month\\",\\"type\\":\\"premium\\"}}')
-                .replace(/premium_expected_expiration\\":\s*(\d+)/g, 'premium_expected_expiration\\":4103004800000')
-                .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":4103004800')
+                .replace(/has_item_streak_wager\\":\s*\w+/g, 'has_item_streak_wager\\":true,\\"premium_product_id\\":\\"com.duolingo.DuolingoMobile.subscription.Premium.TwelveMonth.24Q2Max.120\\",\\"premium_expected_expiration\\":1791387149000')
+                .replace(/gems\\":\s*(\d+)/g, 'gems\\":99999')
+                .replace(/\\"id\\":\\"timed_practice\\"\}/g, '\\"id\\":\\"timed_practice\\"},{\\"purchaseDate\\":1728315149,\\"purchasePrice\\":99,\\"id\\":\\"premium_subscription\\",\\"subscriptionInfo\\":{\\"expectedExpiration\\":17913871490,\\"isFreeTrialPeriod\\":false,\\"isInBillingRetryPeriod\\":false,\\"productId\\":\\"com.duolingo.DuolingoMobile.subscription.Premium.TwelveMonth.24Q2Max.120\\",\\"renewer\\":\\"APPLE\\",\\"renewing\\":false,\\"tier\\":\\"twelve_month\\",\\"type\\":\\"premium\\"}}')
+                .replace(/premium_expected_expiration\\":\s*(\d+)/g, 'premium_expected_expiration\\":1791387149000')
+                .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":17913871490')
                 .replace(/isFreeTrialPeriod\\":\s*\w+/g, 'isFreeTrialPeriod\\":true')
                 .replace(/emailAnnouncement\\":\s*\w+/g, 'emailAnnouncement\\":true,\\"plusStatus\\":\\"PLUS')
                 .replace(/\\"timerBoosts\\":\s*(\d+)/g, '\\"timerBoosts\\":99')
