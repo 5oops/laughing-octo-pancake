@@ -18,7 +18,7 @@
 6、如果任何单位或个人认为此脚本可能涉嫌侵犯其权利，应及时通知并提供身份证明，所有权证明，我们将在收到认证文件确认后删除此脚本。
 7、所有直接或间接使用、查看此脚本的人均应该仔细阅读此声明。本人保留随时更改或补充此声明的权利。一旦您使用或复制了此脚本，即视为您已接受此免责声明。
 
-登陆链接：https://glados.rocks/，登陆即可获取Cookie。
+登陆链接：https://glados.cloud/，登陆即可获取Cookie。
 注册地址：https://github.com/glados-network/GLaDOS
 邀请码：3JRG4-KSGZJ-8QPXF-8PPOO
 
@@ -47,7 +47,7 @@ https:\/\/glados\.rocks\/api\/user\/checkin url script-request-header https://ra
 
 
 【All App MitM】
-hostname = glados.rocks
+hostname = glados.cloud
 */
 
 const $ = new Env("GLaDOS");
@@ -84,11 +84,11 @@ function signin() {
   return new Promise((resolve) => {
     const header = {
       Accept: `application/json, text/plain, */*`,
-      Origin: `https://glados.rocks`,
+      Origin: `https://glados.cloud`,
       "Accept-Encoding": `gzip, deflate, br`,
       Cookie: sicookie,
       "Content-Type": `application/json;charset=utf-8`,
-      Host: `glados.rocks`,
+      Host: `glados.cloud`,
       Connection: `keep-alive`,
       "User-Agent": `Mozilla/5.0 (iPhone; CPU iPhone OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1`,
       'Authorization': siauthorization,
@@ -96,7 +96,7 @@ function signin() {
     };
     const body = `{ "token": "glados.one" }`;
     const signinRequest = {
-      url: "https://glados.rocks/api/user/checkin",
+      url: "https://glados.cloud/api/user/checkin",
       headers: header,
       body: body,
     };
@@ -135,7 +135,7 @@ function signin() {
 function status() {
   return new Promise((resolve) => {
     const statusRequest = {
-      url: "https://glados.rocks/api/user/status",
+      url: "https://glados.cloud/api/user/status",
       headers: { Cookie: sicookie },
     };
     $.get(statusRequest, (error, response, data) => {
