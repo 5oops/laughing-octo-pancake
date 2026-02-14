@@ -1,0 +1,19 @@
+#!name = GLaDOS Checkin
+#!desc = GLaDOS 签到
+#!openUrl = http://boxjs.com/#/app/GLaDOS
+#!author = 500[https://github.com/5oops]
+#!homepage = https://github.com/5oops/laughing-octo-pancake
+#!icon = https://raw.githubusercontent.com/Orz-3/mini/master/Color/GLaDOS.png
+#!category = Checkin
+#!date = 2026-02-25 03:11:53
+#!version = 1.0.0
+#!arguments = 
+#!arguments-desc = 
+
+[Script]
+GLaDOS签到 = type=cron,cronexp=5 0 * * *,wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master/glados.js
+
+获取GLaDOS_Cookie = type=http-request, pattern=https:\/\/glados\.cloud\/api\/user\/checkin, script-path=https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master/glados.js
+
+[MITM]
+hostname = %APPEND% glados.cloud
