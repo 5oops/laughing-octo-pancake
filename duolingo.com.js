@@ -6,6 +6,7 @@
 hostname = ios-api-2.duolingo.com, ios-api-2.duolingo.cn
 *************************************/
 let url = $request.url
+const timestamp7d = Math.floor(Date.now() / 1000) + 7 * 24 * 60 * 60;;
 const isCheckUrl = (url) => (url.includes('ios-api-2.duolingo.com/2017-06-30/batch') || url.includes('ios-api-2.duolingo.com/2023-05-23/batch') )
 
 if (isCheckUrl(url)) {
@@ -15,10 +16,10 @@ if (isCheckUrl(url)) {
                // .replace(/has_item_premium_subscription\\":\s*\w+/g, 'has_item_premium_subscription\\":true')
                // .replace(/has_item_live_subscription\\":\s*\w+/g, 'has_item_live_subscription\\":true,\\"premium_receipt_source\\":\\"apple\\"')
                // .replace(/has_item_streak_wager\\":\s*\w+/g, 'has_item_streak_wager\\":true,\\"premium_product_id\\":\\"com.duolingo.DuolingoMobile.subscription.Premium.TwelveMonth.24Q2Max.120\\",\\"premium_expected_expiration\\":1791387149000')
-                .replace(/gems\\":\s*(\d+)/g, 'gems\\":9999')
+                .replace(/gems\\":\s*(\d+)/g, 'gems\\":99999')
              //   .replace(/\\"id\\":\\"timed_practice\\"\}/g, '\\"id\\":\\"timed_practice\\"},{\\"purchaseDate\\":1771341612,\\"purchasePrice\\":99,\\"id\\":\\"premium_subscription\\",\\"subscriptionInfo\\":{\\"expectedExpiration\\":1802848812,\\"isFreeTrialPeriod\\":false,\\"isInBillingRetryPeriod\\":false,\\"productId\\":\\"com.duolingo.DuolingoMobile.subscription.Gold.TwelveMonth.24Q2Max.240\\",\\"renewer\\":\\"APPLE\\",\\"renewing\\":false,\\"tier\\":\\"twelve_month\\",\\"type\\":\\"premium\\"}}')
                // .replace(/premium_expected_expiration\\":\s*(\d+)/g, 'premium_expected_expiration\\":1802848812000')
-                .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":1771919505')
+                .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":${timestamp7d}')
                // .replace(/isFreeTrialPeriod\\":\s*\w+/g, 'isFreeTrialPeriod\\":false')
                // .replace(/emailAnnouncement\\":\s*\w+/g, 'emailAnnouncement\\":true,\\"plusStatus\\":\\"PLUS",\\"maxStatus\\":\\"MAX')
                // .replace(/\\"timerBoosts\\":\s*(\d+)/g, '\\"timerBoosts\\":99')
