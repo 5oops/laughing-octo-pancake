@@ -6,7 +6,8 @@
 hostname = ios-api-2.duolingo.com, ios-api-2.duolingo.cn
 *************************************/
 let url = $request.url
-const timestamp7d = Math.floor(Date.now() / 1000) + 7 * 24 * 60 * 60;
+const timestamp7d = Math.floor(Date.now() / 1000) + 7 * 24 * 60 * 60
+console.log(timestamp7d)
 const isCheckUrl = (url) => (url.includes('ios-api-2.duolingo.com/2017-06-30/batch') || url.includes('ios-api-2.duolingo.com/2023-05-23/batch') )
 
 if (isCheckUrl(url)) {
@@ -19,7 +20,7 @@ if (isCheckUrl(url)) {
                 .replace(/gems\\":\s*(\d+)/g, 'gems\\":99999')
              //   .replace(/\\"id\\":\\"timed_practice\\"\}/g, '\\"id\\":\\"timed_practice\\"},{\\"purchaseDate\\":1771341612,\\"purchasePrice\\":99,\\"id\\":\\"premium_subscription\\",\\"subscriptionInfo\\":{\\"expectedExpiration\\":1802848812,\\"isFreeTrialPeriod\\":false,\\"isInBillingRetryPeriod\\":false,\\"productId\\":\\"com.duolingo.DuolingoMobile.subscription.Gold.TwelveMonth.24Q2Max.240\\",\\"renewer\\":\\"APPLE\\",\\"renewing\\":false,\\"tier\\":\\"twelve_month\\",\\"type\\":\\"premium\\"}}')
                // .replace(/premium_expected_expiration\\":\s*(\d+)/g, 'premium_expected_expiration\\":1802848812000')
-                .replace(/expectedExpiration\\":\s*(\d+)/g, `expectedExpiration\\":timestamp7d`)
+                .replace(/expectedExpiration\\":\s*(\d+)/g, `expectedExpiration\\":$timestamp7d`)
                // .replace(/isFreeTrialPeriod\\":\s*\w+/g, 'isFreeTrialPeriod\\":false')
                // .replace(/emailAnnouncement\\":\s*\w+/g, 'emailAnnouncement\\":true,\\"plusStatus\\":\\"PLUS",\\"maxStatus\\":\\"MAX')
                // .replace(/\\"timerBoosts\\":\s*(\d+)/g, '\\"timerBoosts\\":99')
