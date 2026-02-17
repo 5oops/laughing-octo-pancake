@@ -13,6 +13,7 @@ const isCheckUrl = (url) => (url.includes('ios-api-2.duolingo.com/2017-06-30/bat
 if (isCheckUrl(url)) {
   var rBody = $response.body;
   rBody = rBody.replace(/has_item_gold_subscription\\":\s*\w+/g, 'has_item_gold_subscription\\":true')
+               .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":' + timestamp7d)
                .replace('doobom\\"},\\"shopItems\\":\[', 'doobom\\"},\\"shopItems\\":\[{\\"purchaseId\\":\\"be0b27e019ee24d3eab3ba9f14f3d47f\\",\\"purchaseDate\\":1771348929,\\"purchasePrice\\":0,\\"id\\":\\"gold_subscription_twelve_month\\",\\"itemName\\":\\"gold_subscription_twelve_month\\",\\"subscriptionInfo\\":{\\"currency\\":\\"\\",\\"expectedExpiration\\":1802884929,\\"isFreeTrialPeriod\\":false,\\"isIntroOfferPeriod\\":false,\\"isInBillingRetryPeriod\\":false,\\"periodLength\\":1,\\"price\\":0,\\"productId\\":\\"com.duolingo.DuolingoMobile.subscription.Gold.TwelveMonth.24Q2Max.240\\",\\"renewer\\":\"gold_subscription_twelve_month\\",\\"renewing\\":false,\\"tier\\":\\"one_month\\",\\"type\\":\\"premium\\",\\"vendorPurchaseId\\":\\"subscription-VENDOR_GOLD_PLUS-5187879-1771348929014\\",\\"promotionalOfferId\\":\\"\\",\\"firstPaymentDate\\":1771348929}},')
                 //.replace(/premium_free_trial_period\\":\s*\w+/g, 'premium_free_trial_period\\":false')
                 //.replace(/has_item_premium_subscription\\":\s*\w+/g, 'has_item_premium_subscription\\":true')
@@ -21,7 +22,7 @@ if (isCheckUrl(url)) {
                 .replace(/gems\\":\s*(\d+)/g, 'gems\\":99999')
              //   .replace(/\\"id\\":\\"timed_practice\\"\}/g, '\\"id\\":\\"timed_practice\\"},{\\"purchaseDate\\":1771341612,\\"purchasePrice\\":99,\\"id\\":\\"premium_subscription\\",\\"subscriptionInfo\\":{\\"expectedExpiration\\":1802848812,\\"isFreeTrialPeriod\\":false,\\"isInBillingRetryPeriod\\":false,\\"productId\\":\\"com.duolingo.DuolingoMobile.subscription.Gold.TwelveMonth.24Q2Max.240\\",\\"renewer\\":\\"APPLE\\",\\"renewing\\":false,\\"tier\\":\\"twelve_month\\",\\"type\\":\\"premium\\"}}')
                // .replace(/premium_expected_expiration\\":\s*(\d+)/g, 'premium_expected_expiration\\":1802848812000')
-                .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":' + timestamp7d)
+                //.replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":' + timestamp7d)
                // .replace(/isFreeTrialPeriod\\":\s*\w+/g, 'isFreeTrialPeriod\\":false')
                // .replace(/emailAnnouncement\\":\s*\w+/g, 'emailAnnouncement\\":true,\\"plusStatus\\":\\"PLUS",\\"maxStatus\\":\\"MAX')
                // .replace(/\\"timerBoosts\\":\s*(\d+)/g, '\\"timerBoosts\\":99')
