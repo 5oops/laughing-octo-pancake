@@ -11,8 +11,8 @@
 #!arguments-desc = 
 
 [Script]
-doulingo.batch = type=http-response, pattern=^https?:\/\/ios-api-2\.duolingo\.com\/(2017-06-30|2023-05-23)\/batch, requires-body=1, binary-body-mode=1, engine=webview, script-path=https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master/duolingo.com.js
-doulingo.available-features = type=http-response, pattern=^https?:\/\/ios-api-2\.duolingo\.com\/(2017-06-30|2023-05-23)\/users\/(\d+)\/available-features, requires-body=1, binary-body-mode=1, engine=webview, script-path=https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master/duolingo.com.js
+doulingo.batch = type=http-response, pattern=^https?:\/\/ios-api-2\.duolingo\.com\/(2017-06-30|2023-05-23)\/batch, requires-body=1, script-path=https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master/duolingo.com.js
+doulingo.available-features = type=http-response, pattern=^https?:\/\/ios-api-2\.duolingo\.com\/(2017-06-30|2023-05-23)\/users\/(\d+)\/available-features, requires-body=1, script-path=https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master/duolingo.com.js
 
 [MITM]
 hostname = %APPEND% ios-api-2.duolingo.com, ios-api-2.duolingo.cn
