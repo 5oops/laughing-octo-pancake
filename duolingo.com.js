@@ -20,7 +20,7 @@ if (isCheckUrl(url)) {
                 .replace(/gems\\":\s*(\d+)/g, 'gems\\":99999')
              //   .replace(/\\"id\\":\\"timed_practice\\"\}/g, '\\"id\\":\\"timed_practice\\"},{\\"purchaseDate\\":1771341612,\\"purchasePrice\\":99,\\"id\\":\\"premium_subscription\\",\\"subscriptionInfo\\":{\\"expectedExpiration\\":1802848812,\\"isFreeTrialPeriod\\":false,\\"isInBillingRetryPeriod\\":false,\\"productId\\":\\"com.duolingo.DuolingoMobile.subscription.Gold.TwelveMonth.24Q2Max.240\\",\\"renewer\\":\\"APPLE\\",\\"renewing\\":false,\\"tier\\":\\"twelve_month\\",\\"type\\":\\"premium\\"}}')
                // .replace(/premium_expected_expiration\\":\s*(\d+)/g, 'premium_expected_expiration\\":1802848812000')
-                .replace(/expectedExpiration\\":\s*(\d+)/g, `expectedExpiration\\":$timestamp7d`)
+                .replace(/expectedExpiration\\":\s*(\d+)/g, 'expectedExpiration\\":' + timestamp7d)
                // .replace(/isFreeTrialPeriod\\":\s*\w+/g, 'isFreeTrialPeriod\\":false')
                // .replace(/emailAnnouncement\\":\s*\w+/g, 'emailAnnouncement\\":true,\\"plusStatus\\":\\"PLUS",\\"maxStatus\\":\\"MAX')
                // .replace(/\\"timerBoosts\\":\s*(\d+)/g, '\\"timerBoosts\\":99')
