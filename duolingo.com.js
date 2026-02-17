@@ -1,14 +1,11 @@
 /**************************************
-
 [rewrite_local]
 ^https?:\/\/ios-api-2\.duolingo\.com\/(2017-06-30|2023-05-23)\/batch url script-response-body https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master/duolingo.com.js
 ^https?:\/\/ios-api-2\.duolingo\.com\/(2017-06-30|2023-05-23)\/users\/(\d+)\/available-features url script-response-body https://raw.githubusercontent.com/5oops/laughing-octo-pancake/master/duolingo.com.js
 [mitm]
 hostname = ios-api-2.duolingo.com, ios-api-2.duolingo.cn
-
 *************************************/
-
-const url = $request.url
+let url = $request.url
 const isCheckUrl = (url) => (url.includes('ios-api-2.duolingo.com/2017-06-30/batch') || url.includes('ios-api-2.duolingo.com/2023-05-23/batch') )
 
 if (isCheckUrl(url)) {
